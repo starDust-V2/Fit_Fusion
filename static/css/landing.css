@@ -1,0 +1,33 @@
+@import url('base.css');
+
+.well_being{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.well_being_card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.well_being_card:nth-child(odd){
+    flex-direction: row-reverse;
+}
+
+.well_being_card img{
+    width: 40%;
+}
+
+.well_being_card .description{
+    padding: 1rem;
+    width: 25rem;
+    font-size: 1.7rem;
+}
