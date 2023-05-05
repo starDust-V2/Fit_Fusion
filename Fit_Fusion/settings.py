@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "Users.apps.UsersConfig",
     "Chats.apps.ChatsConfig",
+    "VideoChat.apps.VideochatConfig",
     "crispy_forms",
     "crispy_bootstrap5",
     "home",

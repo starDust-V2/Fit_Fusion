@@ -10,6 +10,7 @@ urlpatterns = [
     path("chats/",include('Chats.urls')),
 
     path("exercise/", include('Exercise.urls')),
+    path("videochat/",include('VideoChat.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
