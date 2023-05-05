@@ -73,15 +73,12 @@ async function api_call_individual()
             html += "<p><strong>Target:</strong> " + exercise.target + "</p>";
             html += "<img src='" + exercise.gifUrl + "' alt='Exercise GIF'>";
             html += "</div>";
-            document.write(html);
+		
+		document.getElementById('main_div').innerHTML= html;
 
 	} catch (error) {
 		console.error(error);
 	}
-
-
-		
-	
 }
 
 
