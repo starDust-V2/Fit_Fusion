@@ -1,2 +1,22 @@
-{% extends 'landing/base.html' %}
+{% extends 'home/base.html' %}
 
+{% block hero %}
+    {% comment %} {{well_being}} {% endcomment %}
+    {% comment %} <img src="{{MEDIA_URL}}/one.png" alt="this is supposed to be showing" srcset=""> {% endcomment %}
+    {% comment %} about well being {% endcomment %}
+    <div class="well_being">
+        {% for index,row in well_being.items %}
+            <div class="well_being_card">
+                {% for img_url,description in row %}
+                    {% if img_url %}
+                        <img src="{{MEDIA_URL}}/{{img_url}}" alt="Well Being">
+                    {% endif %}
+                    <div class="description">{{description}}</div>
+            
+                {% endfor %} 
+            </div>
+        
+        {% endfor %}
+    </div>
+    
+{% endblock hero %}
