@@ -17,7 +17,7 @@ body{
 /* ------------------  Register Page ------------------ */
 
 #form-container{
-    width: 400px;
+    width: 460px;
     box-shadow:var(--shaddow);
     background-color: #fff;
     padding: 30px;
@@ -104,8 +104,6 @@ body{
 }
 
 
-
-
 .video-container{
     flex-basis: 500px;
     flex-grow: 1;
@@ -127,6 +125,7 @@ body{
 .video-player > * {
     border-radius: 5px;
 }
+
 
 .username-wrapper{
     position: absolute;
