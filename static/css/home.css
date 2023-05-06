@@ -177,12 +177,14 @@ div.hero{
     transition: 0.2s ease-in;
 }
 .side-menu-links a:hover{
-    color: var(--blue);
+    /* color: var(--purple); */
+    transform: scale(1.02);
 }
 .side-menu-links a span{
     font-size: var(--prominent-size);
     line-height: 3rem ;
     z-index: 2;
+    color:white;
 
 }
 .side-menu-links a span:nth-child(1){
@@ -201,6 +203,7 @@ div.hero{
     color: var(--thirty);
 }
 .side-menu-links a.active{
+    color:black;
     background-color: var(--light);
     width: 84%;
     border-top-left-radius: 1.5rem;
@@ -241,6 +244,8 @@ div.hero{
 .post-container{
     display: flex;
     flex-direction: column;
+    width: 90%;
+    margin: 1rem;
     gap: 0.5rem;
     box-shadow: 0 0 4px rgba(0,0,0,0.2);
     border-radius: 0.4rem;
@@ -569,7 +574,18 @@ button[type="submit"] {
 }
 
 
+
 .form-container1 button[type="submit"]{
     /* vertical-align: middle; */
     line-height: 0rem !important;
+}
+
+btn{
+    vertical-align: middle;
+}
+
+.dead a span{
+    color : var(--grey);
+    cursor: not-allowed;
+
 }

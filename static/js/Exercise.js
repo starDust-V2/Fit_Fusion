@@ -65,7 +65,7 @@ async function api_call_individual()
         let parsed_result = JSON.parse(result);
         let exercise= parsed_result;
 
-        var exerciseCard = `<div class="exercise-card">
+        var exerciseCard = `<div class="exercise-card individual">
 								<div class="name"><a href= 'individual_exercise?exercise_id=${exercise_id}+'>${exercise.name}</a></div>
 								<div class="body-part"><span class="what-title"> Body-Part : &nbsp</span>${exercise.bodyPart}</div>
 								<div class="equipment"><span class="what-title">Equipment : &nbsp</span>${exercise.equipment}</div>

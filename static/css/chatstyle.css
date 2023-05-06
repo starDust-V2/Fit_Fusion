@@ -1,6 +1,3 @@
-* {
-    box-sizing: border-box;
-}
 
 .self {
     width: fit-content;
@@ -82,22 +79,6 @@ text-area:active {
 .button:hover {
     background-color: rgb(56, 56, 148);
 
-}
-
-html,
-body {
-    height: 100%;
-}
-
-html {
-    display: table;
-    margin: auto;
-}
-
-body {
-    display: table-cell;
-    vertical-align: middle;
-    background: rgb(233, 233, 238);
 }
 
 #remote_video {

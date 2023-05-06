@@ -5,11 +5,9 @@ from .models import Post
 def landing(request):
     
     about_well_being = {
-        0 : [["one.png","Learn to recognize the signs of mental distress.Take care of your mind as well as your body"]],
-        1 : [["one.png","Seek help if you or someone you know is struggling. Engage in activities that promote mental well-being, such as meditation, mindfulness, and exercise"]],
-        2 : [["one.png","Mental health issues can affect anyone regardless of age, gender, or background. Mental health problems can impact work, relationships, and overall quality of life"]],
-        3 : [["one.png","Stigma and discrimination surrounding mental health can prevent people from seeking help. Early intervention and treatment can improve outcomes for those struggling with mental health issues"]]
-
+        0 : [["images/one-landing.png","Take control of your physical and mental well-being with our comprehensive health and wellness app. Start your journey to a healthier, happier you with our easy-to-use app."]],
+        1 : [["images/two-landing.png","Stay fit and healthy with our selection of exercises and pose tracking features. Get a personalized fitness analysis to track your progress and achieve your goals."]],
+        2 : [["images/three-landing.png","Talk to physical and mental health experts through video calls and get the guidance you need. Find emotional support through our chat app and connect with strangers who can relate."]],
     }
 
     context = {
@@ -56,7 +54,7 @@ def chat(request):
         "name" : "John Doe",
         "bio" : "This is the bio for me if there's any. Cause I need a one dance. Got a hennessey in my hands" }  
     }
-    return render(request,'home/chat.html',context)
+    return render(request,'Chats/index.html',context)
 
 
 def confessions(request):
