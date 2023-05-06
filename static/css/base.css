@@ -18,8 +18,8 @@
     --yellow: rgb(255, 220, 96);
     --prominent-size: 1.5rem;
     --button-size: 1.5rem;
-    --normal-text: 1.4rem;
-    --small-text: 1.2rem;
+    --normal-text: 1.3rem;
+    --small-text: 1.1rem;
     --blue-gradient:linear-gradient(333deg, #0093E9 0%, #80D0C7 100%);
     --dark-gradient: linear-gradient(268deg, #292a2f 0%, #0f4e8a 100%);
 }
@@ -54,7 +54,7 @@ nav a{
     transition: 0.2s ease-in;
 }
 nav .logo{
-    font-size: 3rem;
+    font-size: 2.2rem;
     line-height: 4rem;
     text-align: center; 
 }
@@ -153,7 +153,7 @@ nav .nav-urls{
     justify-content: space-around;
     align-items: center;
     width: 45rem;
-    font-size: 1.5rem;
+    font-size: var(--normal-text);
     line-height: 4rem;
 }
 
@@ -234,9 +234,6 @@ nav button a{
   }
   
 
-  
-  
-
   /* santosh ko users ko login and signup page ko pani yeta xa */
   
   .login-form-container,.register-form-container{
@@ -256,7 +253,7 @@ nav button a{
     form{
         background-color: var(--white);
         box-shadow: 0 0 4px rgba(255,255,255,0.1);
-        padding: 1rem;
+        padding: 2rem;
         width: 25rem;
         height: 30rem;
         display: flex;
@@ -374,6 +371,9 @@ small {
 
     .login-form-container .signup-image{
         display: none;
+    }
+    .register-form-container .signup-image{
+        display : none;
     }
 
 
