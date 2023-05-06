@@ -93,6 +93,12 @@
 
     <div class="main-content">
         <div class="main-content-inner">
+            {% block post_type %}
+                <div class="link-buttons">
+                    <a href="{% url 'home' %}" class="link-button active">Articles</a>
+                    <a href="{% url 'confessions' %}" class="link-button">Confessions</a>
+                </div>
+            {% endblock post_type %}
 
             {% comment %} bichha ma dekhine content {% endcomment %}
             {% block main-content %}

@@ -463,3 +463,102 @@ div.hero{
     }
   }
   
+
+  .link-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .link-button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    background-color: #1877f2;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .link-button.active {
+    background-color: #fff;
+    color: #1877f2;
+  }
+
+
+.form-container1 .confess-form form{
+    margin: 0px !important;
+}
+  /* post form */
+.form-container1{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    /* justify-content: center; */
+    width: 100%;
+    height: 20rem;
+    height: fit-content;
+    margin: 0px;
+}
+.form-container1 form{
+    width: 100%;
+    height: fit-content;
+    padding: 0rem;
+}
+  .form-group {
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+}
+.form-container1 form div label {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: var(--prominent-size);
+}
+.post-form{
+    width: 100%;
+    margin: none;
+}
+label {
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    height: 10rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+button[type="submit"] {
+    margin-left: 1rem;
+    background-color: var(--blue);
+    border-color: var(--blue);
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+textarea{
+    margin-left: 1rem;
+    border: 1px solid pink;
+    width: 95% !important;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-family: "Lora", serif;
+    background-color: var(--light);
+}
