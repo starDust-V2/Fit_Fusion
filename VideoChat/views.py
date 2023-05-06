@@ -38,7 +38,6 @@ def getToken(request):
 
     return JsonResponse({'token': token, 'uid': uid}, safe=False)
 
-@login_required
 @csrf_exempt
 def createMember(request):
     data = json.loads(request.body)
@@ -62,7 +61,6 @@ def getMember(request):
     name = member.name
     return JsonResponse({'name':member.name}, safe=False)
 
-@login_required
 @csrf_exempt
 def deleteMember(request):
     data = json.loads(request.body)
