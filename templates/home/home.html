@@ -138,6 +138,28 @@
                 </div>
             </div>
 
+                    
+            <table>
+                <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>User</th>
+                    <th>Streak</th>
+                </tr>
+                </thead>
+
+
+                <tbody>
+                {% for entry in top_users %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ entry.user.username }}</td>
+                    <td>{{ entry.streak }}&#x1F525;</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
             {% endblock main-content %}
 
             {% comment %} side ko user info wala card {% endcomment %}  
