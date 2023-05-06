@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import random
 import time
+import os
 from agora_token_builder import RtcTokenBuilder
 from .models import RoomMember
 import json
@@ -19,8 +20,13 @@ def room(request):
 
 
 def getToken(request):
-    appId = "95f3853b842c4ea09e776a5f9bc99987"
-    appCertificate = "bf025a4c18544805991c22cc79641456"
+    # Load credentials from JSON file
+    credentials_path = os.path.join('static', 'assets', 'credentials.json')
+    with open(credentials_path) as f:
+        credentials = json.load(f)
+        appId = credentials['appId']
+        appCertificate = credentials['appCertificate']
+
     channelName = request.GET.get('channel')
     uid = random.randint(1, 230)
     expirationTimeInSeconds = 3600
