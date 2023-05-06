@@ -12,12 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
     {% comment %} using context to pass the css_url {% endcomment %}
     
-    <link rel="stylesheet" href= "{% static css_url %}">
-
-    {% block stylesheet %}{% endblock stylesheet %}
-
-
-    {% comment %} <link rel="stylesheet" href= {% static "css/base.css" %}> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href= "{% static css_url %}"> {% endcomment %}
+    <link rel="stylesheet" href= {% static "css/home.css" %}>
     <title>Fit-Fusion</title>
     
     <script defer src={% static "js/base.js"%} defer></script>

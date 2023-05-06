@@ -14,7 +14,8 @@ def landing(request):
     context = {
         "css_url" : "css/landing.css",
         "well_being": about_well_being,
-        'link_position': -1,   
+        'link_position': -1
+        
     }
 
     return render(request,'home/landing.html',context)
