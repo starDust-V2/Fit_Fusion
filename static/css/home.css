@@ -287,7 +287,7 @@ div.hero{
     width: 20rem;
     position: fixed;
     z-index: 1;
-    transform: translate(calc(21rem + 10rem + 2rem),-226%);
+    transform: translate(calc(21rem + 10rem + 2rem),-44.5rem);
     
 }
 .user-info{

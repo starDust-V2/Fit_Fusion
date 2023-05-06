@@ -1,0 +1,34 @@
+.exercise-card{
+    border-radius: 1rem;
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    overflow: hidden;
+    gap: 0.2rem;
+}
+
+.name{
+    text-align: center;
+    height: 3rem;
+    background-color: var(--blue);
+    color: black;
+}
+
+.name a{
+    font-size: var(--prominent-size);
+    line-height: 3rem;
+}
+
+.what-title{
+    font-size: var(--normal-text);
+}
+
+.exercise-card div.body-part,
+.exercise-card div.equipment,
+.exercise-card div.target{
+    font-size: var(--small-text);
+    padding-left: 1rem;
+}
+

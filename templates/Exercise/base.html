@@ -14,15 +14,16 @@
     
     {% comment %} <link rel="stylesheet" href= "{% static css_url %}"> {% endcomment %}
     <link rel="stylesheet" href= {% static "css/home.css" %}>
+    <link rel="stylesheet" href= {% static "css/exercise.css" %}>
     <title>Fit-Fusion</title>
     
     <script defer src={% static "js/base.js"%} defer></script>
-    <script>
-        {% comment %} const activeLinkPos = {{link_position}}; {% endcomment %}
-    </script>
-</head>
+    <script  src={% static "js/Exercise.js"%} defer></script>
 
-<body>
+
+</head>
+<span class="what-title"></span>
+<body onload="api_call_all()">
     {% block navbar %}
     <nav>
         <div class="logo">
@@ -64,3 +65,10 @@
     </footer>
 </body>
 </html>
+{% comment %} <div class="exercise-card">
+    <div class="name"><a href= 'individual_exercise?exercise_id=${exercise_id}'></a></div>
+    <div class="body-part">${exercise.bodyPart}</div>
+    <div class="equipment">${exercise.equipment}</div>
+    <div class="target">${exercise.target}</div>
+    <img src=${exercise.gifUrl} alt="">
+</div> {% endcomment %}

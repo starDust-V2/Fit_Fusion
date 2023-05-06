@@ -23,16 +23,18 @@ async function api_call_all()
 		 for (var i = 0; i < parsed_result.length; i++) {
             var exercise = parsed_result[i];
 			var exercise_id = exercise.id;
-			var html = "<div> <a href= 'individual_exercise?exercise_id="+exercise_id+"'>";
-            html += "<div class='exercise-card'>";
-            html += "<h1>Exercise Details</h1>";
-            html += "<p><strong>Name:</strong> " + exercise.name + "</p>";
-            html += "<p><strong>Body Part:</strong> " + exercise.bodyPart + "</p>";
-            html += "<p><strong>Equipment:</strong> " + exercise.equipment + "</p>";
-            html += "<p><strong>Target:</strong> " + exercise.target + "</p>";
-            html += "<img src='" + exercise.gifUrl + "' alt='Exercise GIF'>";
-            html += "</div></a></div>";
-            document.write(html);
+			console.log(exercise_id)
+
+			var exerciseCard = `<div class="exercise-card">
+								<div class="name"><a href= 'individual_exercise?exercise_id=${exercise_id}+'>${exercise.name}</a></div>
+								<div class="body-part"><span class="what-title"> Body-Part : &nbsp</span>${exercise.bodyPart}</div>
+								<div class="equipment"><span class="what-title">Equipment : &nbsp</span>${exercise.equipment}</div>
+								<div class="target"><span class="what-title">Target Muscle : &nbsp</span>${exercise.target}</div>
+								<img src=${exercise.gifUrl} alt="">
+								</div>` 
+
+
+			document.querySelector(".main-content-inner").insertAdjacentHTML('beforeend', exerciseCard)
 		 }
 
 	} catch (error) {
@@ -41,45 +43,6 @@ async function api_call_all()
 }
 
 
-
-
-async function api_call_individual()
-{
-	//get variable value from url:
-	const urlParams = new URLSearchParams(window.location.search);
-	const exercise_id = urlParams.get('exercise_id');
-
-	const url = 'https://exercisedb.p.rapidapi.com/exercises/exercise/'+ exercise_id ;
-	console.log(url);
-	const options = {
-		method: 'GET',
-		headers: {
-			'X-RapidAPI-Key': 'c56e9a8e6emshb21b889df59c1f3p1325f2jsn828ee3b47f1e',
-			'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
-		}
-	};
-
-	try {
-		const response = await fetch(url, options);
-		const result = await response.text();
-		let parsed_result = JSON.parse(result);
-		let exercise= parsed_result;
-		
-        var html = "<div class='exercise-card'>";
-            html += "<h1>Exercise Details</h1>";
-            html += "<p><strong>Name:</strong> " + exercise.name + "</p>";
-            html += "<p><strong>Body Part:</strong> " + exercise.bodyPart + "</p>";
-            html += "<p><strong>Equipment:</strong> " + exercise.equipment + "</p>";
-            html += "<p><strong>Target:</strong> " + exercise.target + "</p>";
-            html += "<img src='" + exercise.gifUrl + "' alt='Exercise GIF'>";
-            html += "</div>";
-		
-		document.getElementById('main_div').innerHTML= html;
-
-	} catch (error) {
-		console.error(error);
-	}
-}
 
 
 
