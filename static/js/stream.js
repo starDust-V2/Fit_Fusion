@@ -1,4 +1,4 @@
-const APP_ID = 'YOUR APP ID'
+const APP_ID = '95f3853b842c4ea09e776a5f9bc99987'
 const TOKEN = sessionStorage.getItem('token')
 const CHANNEL = sessionStorage.getItem('room')
 let UID = sessionStorage.getItem('UID')
@@ -19,8 +19,8 @@ let joinAndDisplayLocalStream = async () => {
     try{
         UID = await client.join(APP_ID, CHANNEL, TOKEN, UID)
     }catch(error){
+        // window.open('/videochat/', '_self')
         console.error(error)
-        window.open('/', '_self')
     }
     
     localTracks = await AgoraRTC.createMicrophoneAndCameraTracks()
@@ -103,7 +103,7 @@ let toggleMic = async (e) => {
 }
 
 let createMember = async () => {
-    let response = await fetch('/create_member/', {
+    let response = await fetch('/videochat/create_member/', {
         method:'POST',
         headers: {
             'Content-Type':'application/json'
@@ -116,13 +116,13 @@ let createMember = async () => {
 
 
 let getMember = async (user) => {
-    let response = await fetch(`get_member/?UID=${user.uid}&room_name=${CHANNEL}`)
+    let response = await fetch(`/videochat/get_member/?UID=${user.uid}&room_name=${CHANNEL}`)
     let member = await response.json()
     return member
 }
 
 let deleteMember = async () => {
-    let response = await fetch('delete_member/', {
+    let response = await fetch('/videdochat/delete_member/', {
         method:'POST',
         headers: {
             'Content-Type':'application/json'
