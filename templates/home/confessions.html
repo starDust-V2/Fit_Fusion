@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li class="side-menu-links">
-                    <a href="/chat/">
+                    <a href="/chats/">
                         <span class="material-symbols-outlined">chat</span>
                         <span class="link-text">Message</span>
                     </a>
@@ -83,14 +83,6 @@
 
 
 {% block hero %}
-
-    {% comment %} <ul class="side-menu">
-        <li class="side-menu-links"><a  class= "active" href="/home/">Home</a></li>
-        <li class="side-menu-links"><a href="/home/physical">Physical</a></li>
-        <li class="side-menu-links"><a href="/home/mental">Mental </a></li>
-        <li class="side-menu-links"><a href="/home/overview">Overview</a></li>
-    </ul> {% endcomment %}
-
     <div class="main-content">
         <div class="main-content-inner">
             {% block post_type %}
@@ -105,22 +97,24 @@
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="id_content">Confess here:</label>
-                        <textarea class="form-control" id="id_content" name="content"></textarea>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <input class="form-control" id="title-content" type="text" name="title" autofocus="" autocapitalize="none"  maxlength="150" required="true" placeholder="Enter Your Title">
+                        <textarea class="form-control" id="id_content" name="content" placeholder="What's on your mind?.."></textarea>
+                        <button type="submit" class="btn btn-primary">Post</button>
                     </div>
                 </form>
             </div>
             {% comment %} bichha ma dekhine content {% endcomment %}
             {% block main-content %}
 
-            {% for title,author,date,content,support,report,comments in  posts%}
+            {% comment %} {% for title,author,date,content,support,report,comments in  posts%} {% endcomment %}
+            {% for post in  posts%}
                 <div class="post-container">
-                    <div class="post-title">{{title}}</div>
+                    <div class="post-title">{{post.title}}</div>
                     <div class="post-info">
-                        <p class="post-author">{{author}}</p>
-                        <p class="post-date">{{date}}</p>
+                        <p class="post-author">{{post.author}}</p>
+                        <p class="post-date">{{post.time_stamp}}</p>
                     </div>
-                    <div class="post-content">{{content}}</div>
+                    <div class="post-content">{{post.content}}</div>
                     <div class="post-buttons">
                         <ul>
                             <li><a href="#"> <i class="fa-regular fa-heart"></i> &nbsp; {{support}} </a></li>
