@@ -1,6 +1,5 @@
-#credentials file
-# static/assets/credentials.json
-
+# credentials file
+static/assets/credentials.json
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
