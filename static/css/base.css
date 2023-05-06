@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Montserrat&display=swap');
 *,*::before,*::after{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    background-color: rgba(100,100,0,0.2) !important;
+    /* background-color: rgba(100,100,0,0.2) !important; */
      /* border: 1px solid black;  */
 }
 :root{
@@ -16,7 +16,7 @@
     --white: #fdfdfd;
     --light: #f2f5fa;
     --yellow: rgb(255, 220, 96);
-    --prominent-size: 2rem;
+    --prominent-size: 1.5rem;
     --button-size: 1.5rem;
     --normal-text: 1.4rem;
     --small-text: 1.2rem;
@@ -26,7 +26,7 @@
 
 body {
     display:flex;
-    font-family: 'Alumni Sans', sans-serif;
+    font-family: 'Lora', serif;
     flex-direction: column;
     /* align-items: center; */
     justify-content: space-between;
@@ -54,7 +54,6 @@ nav a{
     transition: 0.2s ease-in;
 }
 nav .logo{
-    width: 8rem;
     font-size: 3rem;
     line-height: 4rem;
     text-align: center; 
@@ -153,15 +152,11 @@ nav .nav-urls{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 54rem;
+    width: 45rem;
     font-size: 1.5rem;
     line-height: 4rem;
-
 }
 
-nav .nav-urls .nav-link:nth-child(1){
-    margin-left: 15rem;
-}
 nav .nav-urls .nav-link a:hover{
     color : var(--yellow);
 }
@@ -205,9 +200,10 @@ footer{
 
 nav button {
     z-index: -1;
-    font-family: 'Alumni Sans', sans-serif;
-    width: 6rem;
-    height: 2rem;
+    font-family: "Lora", serif;
+    width: 8rem;
+    /* padding: 0.5rem; */
+    height: 2.5rem;
     cursor: pointer;
     border: 0;
     border-radius: 4px;
@@ -216,6 +212,11 @@ nav button {
     box-shadow: 0 0 4px;
     transition: 0.4s;
   }
+nav button a{
+    display: inline-block;
+    color: black;
+    width: 100%;
+}
   
 .reg {
     color: var(--thirty);
@@ -233,6 +234,110 @@ nav button {
   }
   
 
+  
+  
+
+  /* santosh ko users ko login and signup page ko pani yeta xa */
+  
+  .login-form-container,.register-form-container{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    
+    .login-form-container div img ,
+    .register-form-container div img {
+        height: 20rem;
+    }
+    
+    
+    form{
+        background-color: var(--white);
+        box-shadow: 0 0 4px rgba(255,255,255,0.1);
+        padding: 1rem;
+        width: 25rem;
+        height: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 4px rgba(0,0,0,0.2);
+        border-radius: 0.5rem;
+}
+
+form div{
+    position: relative;
+    width: 23rem;
+    /* margin-left:20%; */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    
+}
+form div label{
+    width: 23rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
+}
+
+form div input[type="text"], input[type="email"], input[type="password"] {
+    margin-left: 1rem;
+    border: 1px solid pink;
+    width: 20rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-family: "Lora", serif;
+    background-color: var(--light);
+}
+
+form button{
+    display: inline-block;
+    font-family: "Lora", serif;
+    width: 12rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    transition: 0.4s;
+    background-color: var(--thirty);
+    color: white;
+    margin-top: 1rem;
+}
+
+form button:hover {
+    background-color: var(--yellow);
+    color: black;
+}
+
+.bottom-msg{
+    margin-top: 1rem;
+    height: 4rem;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+small {
+    display: block;
+    font-size: var(--small-text);
+    text-align: center;
+    margin-top:0.5rem;
+
+}
+
+
+
 @media screen and (max-width: 992px){
 
     nav .ham-and-btn{
@@ -249,7 +354,7 @@ nav button {
         transition: height 0.3s ease-in;
     }
     nav:not(#home-nav).open{
-        height: calc(4rem + calc( 3 * 3rem));
+        height: calc(4rem + calc( 4 * 3rem));
     }
     .nav-urls nav-btns{
         display: none;
@@ -263,5 +368,21 @@ nav button {
     nav .nav-urls .nav-link:nth-child(1){
         margin-left: 0rem;
     }
+    nav .nav-urls .nav-btns{
+        display: none;
+    }
+
+    .login-form-container .signup-image{
+        display: none;
+    }
+
+
 }
+
+@media screen and (max-width: 672px){
+    .ham-and-btn .nav-btns{
+        display: none;
+    }
+}
+
 
