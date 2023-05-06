@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth.decorators import login_required
 from .models import Post
 from Exercise.models import UserScore
 # Create your views here.
@@ -19,6 +20,7 @@ def landing(request):
 
     return render(request,'home/landing.html',context)
 
+@login_required
 def home(request):
 
     user_info = {
@@ -46,7 +48,7 @@ def home(request):
     }
     return render(request,'home/home.html',context)
 
-
+@login_required
 def chat(request):
 
     context ={
@@ -58,7 +60,7 @@ def chat(request):
     }
     return render(request,'Chats/index.html',context)
 
-
+@login_required
 def confessions(request):
 
 
