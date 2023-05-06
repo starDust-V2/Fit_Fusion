@@ -56,3 +56,6 @@ def chat(request):
     }
     return render(request,'home/chat.html',context)
 
+
+def confessions():
+    return
