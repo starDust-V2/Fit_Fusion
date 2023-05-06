@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "Users.apps.UsersConfig",
     "Chats.apps.ChatsConfig",
     "VideoChat.apps.VideochatConfig",
+    "Exercise.apps.ExerciseConfig",
     "crispy_forms",
     "crispy_bootstrap5",
     "home",
