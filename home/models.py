@@ -8,8 +8,8 @@ class Post(models.Model):
     time_stamp=models.DateTimeField(auto_now=True)
     content=models.TextField()
     image_url=models.CharField(max_length=50)
-    likes=models.IntegerField()
-    reports=models.IntegerField()
+    likes=models.IntegerField(default=0)
+    reports=models.IntegerField(default=0)
 
 class Comment(models.Model):
     author=models.ForeignKey(User,on_delete=models.CASCADE)

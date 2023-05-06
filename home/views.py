@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Post
 
 # Create your views here.
@@ -64,21 +64,17 @@ def confessions(request):
     "image_url" : "one.png",
     "name" : "John Doe",
     "bio" : "This is the bio for me if there's any. Cause I need a one dance. Got a hennessey in my hands"
-}
+    }
     if request.method == "POST":
         content=request.POST["content"]
         author=request.user
-        post_type=0
-    posts=Post.objects.filter(post_type=0)
+        title=request.POST["title"]
+        user_post=Post(title=title,author=author,content=content,post_type=0)
+        user_post.save()
+
+        return redirect('confessions')
     
-    posts = [
-    ["Title of the post","author1","2079 Jan 2 11:00pm", "Hello from the other side. I must have called a thousand times. To tell I'm sorry for everything that I have done. Hello from the outside. I need one dnace got a hennessey in my hands one more time for I go higher powers taking a hold on me ",1,1,{}],
-    ["Title of the post","author1","2079 Jan 2 11:00pm", "Hello from the other side. I must have called a thousand times. To tell I'm sorry for everything that I have done. Hello from the outside. I need one dnace got a hennessey in my hands one more time for I go higher powers taking a hold on me ",1,1,{}],
-    ["Title of the post","author1","2079 Jan 2 11:00pm", "Hello from the other side. I must have called a thousand times. To tell I'm sorry for everything that I have done. Hello from the outside. I need one dnace got a hennessey in my hands one more time for I go higher powers taking a hold on me ",1,1,{}],
-    ["Title of the post","author1","2079 Jan 2 11:00pm", "Hello from the other side. I must have called a thousand times. To tell I'm sorry for everything that I have done. Hello from the outside. I need one dnace got a hennessey in my hands one more time for I go higher powers taking a hold on me ",1,1,{}],
-    ["Title of the post","author1","2079 Jan 2 11:00pm", "Hello from the other side. I must have called a thousand times. To tell I'm sorry for everything that I have done. Hello from the outside. I need one dnace got a hennessey in my hands one more time for I go higher powers taking a hold on me ",1,1,{}],
-    ["Title of the post","author1","2079 Jan 2 11:00pm", "Hello from the other side. I must have called a thousand times. To tell I'm sorry for everything that I have done. Hello from the outside. I need one dnace got a hennessey in my hands one more time for I go higher powers taking a hold on me ",1,1,{}],
-    ]
+    posts=Post.objects.filter(post_type=0).reverse()
     context = {
         'link_position': 0,
         "css_url" : "css/home.css",
@@ -86,4 +82,5 @@ def confessions(request):
         "posts" : posts
 
     }
+ 
     return render(request,'home/confessions.html',context)
