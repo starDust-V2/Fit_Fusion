@@ -4,7 +4,7 @@ async function api_call_all()
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': 'c56e9a8e6emshb21b889df59c1f3p1325f2jsn828ee3b47f1e',
+			'X-RapidAPI-Key': '0e4418edcemshb5469347fbe1173p1ced39jsn478c26435699',
 			'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
 		}
 	};
@@ -20,7 +20,7 @@ async function api_call_all()
 		
 		//displaying all the exercise:
 		// Loop through exercises and generate HTML dynamically
-		 for (var i = 0; i < parsed_result.length; i++) {
+		 for (var i = 0; i < 100; i++) {
             var exercise = parsed_result[i];
 			var exercise_id = exercise.id;
 			console.log(exercise_id)
@@ -54,7 +54,7 @@ async function api_call_individual()
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'c56e9a8e6emshb21b889df59c1f3p1325f2jsn828ee3b47f1e',
+            'X-RapidAPI-Key': '0e4418edcemshb5469347fbe1173p1ced39jsn478c26435699',
             'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
         }
     };
