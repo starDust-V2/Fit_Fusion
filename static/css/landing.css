@@ -29,5 +29,5 @@
 .well_being_card .description{
     padding: 1rem;
     width: 25rem;
-    font-size: 1.7rem;
+    font-size: var(--button-size);
 }

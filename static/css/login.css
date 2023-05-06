@@ -8,7 +8,7 @@
     cursor: pointer;
     border: 0;
     border-radius: 4px;
-    font-size: 1.5rem;
+    font-size: var(--prominent-size);
     line-height: 2rem;
     box-shadow: 0 0 4px;
     transition: 0.4s;

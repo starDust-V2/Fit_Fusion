@@ -47,7 +47,7 @@ nav .user-icon{
     text-align: center;
     padding-left: 2rem ;
     padding-top: 2rem;
-    font-size: 1rem;
+    font-size: var(--small-text);
     line-height: 1.35rem;
 }
 
@@ -251,16 +251,17 @@ div.hero{
     font-size: var(--prominent-size);
 }
 .post-info{
+    color: var(--grey);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 .post-info p{
     margin-right: 0.6rem;
-    font-size: var(--small-text);
+    font-size: 0.9rem;
 }
 .post-content{
-    font-size: var(--normal-text);
+    font-size: var(--button-text);
 }
 .post-buttons ul{
     display: flex;
@@ -287,7 +288,7 @@ div.hero{
     width: 20rem;
     position: fixed;
     z-index: 1;
-    transform: translate(calc(21rem + 10rem + 2rem),-44.5rem);
+    transform: translate(calc(21rem + 10rem + 2rem),-32.5rem);
     
 }
 .user-info{
@@ -394,8 +395,7 @@ div.hero{
         width: 60vw;
     }
     .user-and-bio{
-        transform: translateX(calc(30vw + 13vw + 2vw));
-        width: 26vw;
+        transform: translate(32rem,-32.5rem);
     } 
 }
 
@@ -526,7 +526,7 @@ div.hero{
     margin: none;
 }
 label {
-    font-weight: bold;
+    font-weight: 400;
 }
 
 textarea {
