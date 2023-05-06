@@ -6,4 +6,4 @@ from .models import *
 class UserScoreAdmin(admin.ModelAdmin):
     list_display=('user','work_days','gap_days','streak','last_workout')
 
-admin.site.register(UserScore,UserScoreAdmin)
+admin.site.register(UserScore,UserScoreAdmin) 
