@@ -1,5 +1,8 @@
 @import url('base.css');
 
+div.hero{
+    background-color: white !important;
+}
 .well_being{
     display: flex;
     flex-direction: column;
@@ -23,7 +26,7 @@
 }
 
 .well_being_card img{
-    width: 40%;
+    width: 30%;
 }
 
 .well_being_card .description{

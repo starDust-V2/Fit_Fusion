@@ -11,7 +11,7 @@
 
     const slider = document.querySelector('.slider')
     if(slider){
-        // slider.style.top = `${2 + 4 * activeLinkPos}rem`
+        slider.style.top = `${2 + 4 * activeLinkPos}rem`
     }
     const sideMenuLinks = document.querySelectorAll(".side-menu-links a");
     const loc = ['home','chat','exercise','book','subscribe','analyze'];
