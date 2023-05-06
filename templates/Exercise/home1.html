@@ -1,4 +1,4 @@
-{% extends 'home/base.html' %}
+{% extends 'Exercise/base1.html' %}
 
 
 {% block navbar %}
@@ -27,14 +27,14 @@
                     <div></div>
                     <div></div>
                 </li>
-                <li class="side-menu-links active">
+                <li class="side-menu-links">
                     <a>
                         <span class="material-symbols-outlined">home</span> 
                         <span class="link-text">Home</span>
                     </a>
                 </li>
                 <li class="side-menu-links">
-                    <a href="/chats/">
+                    <a href="/chat/">
                         <span class="material-symbols-outlined">chat</span>
                         <span class="link-text">Message</span>
                     </a>
@@ -47,6 +47,12 @@
                 </li>
                 <li class="side-menu-links">
                     <a>
+                        <span class="material-symbols-outlined">book</span>
+                        <span class="link-text">Book Session</span>
+                    </a>
+                </li>
+                <li class="side-menu-links">
+                    <a>
                         <span class="material-symbols-outlined">loyalty</span>
                         <span class="link-text">Subscription</span>
                     </a>
@@ -55,12 +61,6 @@
                     <a>
                         <span class="material-symbols-outlined">insights</span>
                         <span class="link-text">Analytics</span>
-                    </a>
-                </li>
-                <li class="side-menu-links dead">
-                    <a>
-                        <span class="material-symbols-outlined">book</span>
-                        <span class="link-text">Book Session</span>
                     </a>
                 </li>
             </ul>
@@ -93,12 +93,6 @@
 
     <div class="main-content">
         <div class="main-content-inner">
-            {% block post_type %}
-                <div class="link-buttons">
-                    <a href="{% url 'home' %}" class="link-button active">Articles</a>
-                    <a href="{% url 'confessions' %}" class="link-button">Confessions</a>
-                </div>
-            {% endblock post_type %}
 
             {% comment %} bichha ma dekhine content {% endcomment %}
             {% block main-content %}

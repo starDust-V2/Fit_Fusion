@@ -1,0 +1,67 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	{% comment %} <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css"> {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    {% comment %} using context to pass the css_url {% endcomment %}
+
+    <link rel="stylesheet" href= {% static "css/home.css" %}>
+    <link rel="stylesheet" href= {% static "css/chat.css" %}>
+    <link rel="stylesheet" href={% static 'css/chatstyle.css' %}>
+    <title>Fit-Fusion</title>
+    
+    <script defer src={% static "js/base.js"%} defer></script>
+    <script>
+        const activeLinkPos = 1;
+    </script>
+</head>
+
+<body>
+    {% block navbar %}
+    <nav>
+        <div class="logo">
+            <a href="/home">Fit-Fusion</a>
+        </div>
+
+        <div class="ham-and-btn">
+            <div class="nav-btns">
+                <button class="log">Login</button>
+                <button class="reg">Sign up</button>
+            </div>
+            
+            <div class="ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <ul class="nav-urls">
+            <li class="nav-link"><a href="#">Well-Being </a></li>
+            <li class="nav-link"><a href="#">Services</a></li>
+            <li class="nav-link"><a href="#">About-us</a></li>
+            <div class="nav-btns">
+                <button class="log"><a href="/users/login">Login</a></button>
+                <button class="reg"><a href="/users/register">Sign Up</a></button>
+            </div>
+        </ul>                
+    </nav>
+    {% endblock navbar %}
+    
+    <div class="hero">
+        <div class="overlay"></div>
+        {% block hero %}{% endblock hero %}
+    </div>
+    
+    <footer>
+        &copy;&nbsp; StarDust 2023, All Rights Reserved.
+    </footer>
+</body>
+</html>

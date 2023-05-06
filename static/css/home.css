@@ -176,6 +176,9 @@ div.hero{
     line-height: 3rem;
     transition: 0.2s ease-in;
 }
+.side-menu-links.active a span{
+    color: black;
+}
 .side-menu-links a:hover{
     /* color: var(--purple); */
     transform: scale(1.02);
