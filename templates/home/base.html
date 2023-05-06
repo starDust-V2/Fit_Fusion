@@ -15,8 +15,11 @@
     
     <link rel="stylesheet" href= "{% static css_url %}">
 
+    {% block stylesheet %}{% endblock stylesheet %}
+
+
     {% comment %} <link rel="stylesheet" href= {% static "css/base.css" %}> {% endcomment %}
-    <title>eA-Ze</title>
+    <title>Fit-Fusion</title>
     
     <script defer src={% static "js/base.js"%} defer></script>
     <script>
@@ -28,7 +31,7 @@
     {% block navbar %}
     <nav>
         <div class="logo">
-            <a href="#">eA-eZ</a>
+            <a href="/home">Fit-Fusion</a>
         </div>
 
         <div class="ham-and-btn">
@@ -49,8 +52,8 @@
             <li class="nav-link"><a href="#">Services</a></li>
             <li class="nav-link"><a href="#">About-us</a></li>
             <div class="nav-btns">
-                <button class="log">Login</button>
-                <button class="reg">Sign up</button>
+                <button class="log"><a href="/users/login">Login</a></button>
+                <button class="reg"><a href="/users/register">Sign Up</a></button>
             </div>
         </ul>                
     </nav>
