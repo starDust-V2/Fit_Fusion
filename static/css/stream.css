@@ -10,7 +10,9 @@ body{
     background-color: rgba(232,233,239,1);
     font-family: 'Roboto', sans-serif;
 }
-
+.side-menu-links a span .active{
+    color: black;
+}
 
 /* ------------------  Register Page ------------------ */
 

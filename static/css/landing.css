@@ -3,6 +3,9 @@
 div.hero{
     background-color: white !important;
 }
+.side-menu-links a span .active{
+    color: black;
+}
 .well_being{
     display: flex;
     flex-direction: column;

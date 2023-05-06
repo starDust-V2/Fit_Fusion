@@ -1,1 +1,4 @@
 @import url("home.css");
+.side-menu-links a span .active{
+    color: black;
+}

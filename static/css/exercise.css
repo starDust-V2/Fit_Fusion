@@ -1,4 +1,6 @@
-
+.side-menu-links a span .active{
+    color: black;
+}
 .exercise-card{
     width: 15rem;
     border-radius: 1rem;
@@ -14,7 +16,6 @@
 .exercise-card.individual{
     flex-grow: 0;
 }
-
 .name{
     overflow: hidden;
     text-transform: capitalize;
@@ -73,9 +74,3 @@
     }
 
 }
-
-canvas {
-    width: 80vw !important;
-    margin-left: 10vw;
-    transform: translateX(50%,50%);
-  }

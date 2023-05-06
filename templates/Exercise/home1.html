@@ -79,65 +79,12 @@
 
 {% endblock navbar %}
 
-
-
-
 {% block hero %}
-
-    {% comment %} <ul class="side-menu">
-        <li class="side-menu-links"><a  class= "active" href="/home/">Home</a></li>
-        <li class="side-menu-links"><a href="/home/physical">Physical</a></li>
-        <li class="side-menu-links"><a href="/home/mental">Mental </a></li>
-        <li class="side-menu-links"><a href="/home/overview">Overview</a></li>
-    </ul> {% endcomment %}
-
     <div class="main-content">
         <div class="main-content-inner">
-
-            {% comment %} bichha ma dekhine content {% endcomment %}
             {% block main-content %}
-
-            {% for title,author,date,content,support,report,comments in  posts%}
-                <div class="post-container">
-                    <div class="post-title">{{title}}</div>
-                    <div class="post-info">
-                        <p class="post-author">{{author}}</p>
-                        <p class="post-date">{{date}}</p>
-                    </div>
-                    <div class="post-content">{{content}}</div>
-                    <div class="post-buttons">
-                        <ul>
-                            <li><a href="#"> <i class="fa-regular fa-heart"></i> &nbsp; {{support}} </a></li>
-                            <li><a href="#"> <i class="fa-regular fa-comment"></i> &nbsp; Comment</a></li>
-                            <li><a href="#"> <i class="fa-sharp fa-regular fa-flag"></i>&nbsp; {{report}}</a></li>
-                        </ul>
-                    </div>
-                </div>
-            
-            {% endfor %}
-
-            <div class="user-and-bio">
-                <div class="user-info">
-                    <div class="cover-pic">
-                        <img src="{{MEDIA_URL}}/{{user.image_url}}" alt="">
-                    </div>
-                    <div class="user-icon">
-                        <img src="{{MEDIA_URL}}/{{user.image_url}}" alt="profile-pic">
-                    </div>
-                    <div class="user-details">
-                        <p class="user-name">{{user.name}}</p>
-                        <p class="bio">{{user.bio}}</p>
-                    </div>
-                    
-                </div>
-            </div>
-
             {% endblock main-content %}
-
-            {% comment %} side ko user info wala card {% endcomment %}  
         </div>
         
     </div>
-
-    
 {% endblock hero %}

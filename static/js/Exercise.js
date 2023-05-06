@@ -20,7 +20,7 @@ async function api_call_all()
 		
 		//displaying all the exercise:
 		var exerciseCard = `<div class="exercise-card">
-								<div class="name"><a href= 'individual_exercise?exercise_id=0662+'>push-up</a></div>
+								<div class="name"><a href= 'pushup/'>push-up</a></div>
 								<div class="body-part"><span class="what-title"> Body-Part : &nbsp</span>chest</div>
 								<div class="equipment"><span class="what-title">Equipment : &nbsp</span>body weight</div>
 								<div class="target"><span class="what-title">Target Muscle : &nbsp</span>pectorals</div>
@@ -28,7 +28,7 @@ async function api_call_all()
 								</div>` 
 
 			exerciseCard = exerciseCard + `<div class="exercise-card">
-								<div class="name"><a href= 'individual_exercise?exercise_id=3222+'>semi squat jump (male)</a></div>
+								<div class="name"><a href= 'squat/'>semi squat jump (male)</a></div>
 								<div class="body-part"><span class="what-title"> Body-Part : &nbsp</span>cardio</div>
 								<div class="equipment"><span class="what-title">Equipment : &nbsp</span>body weight</div>
 								<div class="target"><span class="what-title">Target Muscle : &nbsp</span>cardiovascular system</div>
@@ -36,7 +36,7 @@ async function api_call_all()
 								</div>` 
 	
 			exerciseCard = exerciseCard + `<div class="exercise-card">
-								<div class="name"><a href= 'individual_exercise?exercise_id=1670+'>dumbbell one arm standing curl</a></div>
+								<div class="name"><a href= 'curl/'>dumbbell one arm standing curl</a></div>
 								<div class="body-part"><span class="what-title"> Body-Part : &nbsp</span>upper arms</div>
 								<div class="equipment"><span class="what-title">Equipment : &nbsp</span>dumbbell</div>
 								<div class="target"><span class="what-title">Target Muscle : &nbsp</span>biceps	</div>

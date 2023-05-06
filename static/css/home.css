@@ -159,7 +159,9 @@ div.hero{
 .side-menu.open li{
     width: 100%;
 }
-
+.side-menu-links a span .active{
+    color: black;
+}
 
 .side-menu-links a{
     z-index: 2;
@@ -240,7 +242,6 @@ div.hero{
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    border: 1px solid black;
 }
 
 /* -------------posts------------ */
@@ -296,7 +297,7 @@ div.hero{
     width: 20rem;
     position: fixed;
     z-index: 1;
-    transform: translate(calc(21rem + 10rem + 2rem),-32.5rem);
+    transform: translate(calc(21rem + 10rem + 2rem),-43rem);
     
 }
 .user-info{
@@ -403,7 +404,7 @@ div.hero{
         width: 60vw;
     }
     .user-and-bio{
-        transform: translate(32rem,-32.5rem);
+        transform: translate(32rem,-43rem) !important;
     } 
 }
 
