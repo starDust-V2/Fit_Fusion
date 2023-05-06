@@ -47,7 +47,7 @@ nav .user-icon{
     text-align: center;
     padding-left: 2rem ;
     padding-top: 2rem;
-    font-size: 1rem;
+    font-size: var(--small-text);
     line-height: 1.35rem;
 }
 

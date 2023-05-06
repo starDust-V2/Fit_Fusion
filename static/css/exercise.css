@@ -69,3 +69,9 @@
     }
 
 }
+
+canvas {
+    width: 80vw !important;
+    margin-left: 10vw;
+    transform: translateX(50%,50%);
+  }

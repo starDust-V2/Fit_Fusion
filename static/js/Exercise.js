@@ -65,16 +65,16 @@ async function api_call_individual()
         let parsed_result = JSON.parse(result);
         let exercise= parsed_result;
 
-        var html = "<div class='exercise-card'>";
-            html += "<h1>Exercise Details</h1>";
-            html += "<p><strong>Name:</strong> " + exercise.name + "</p>";
-            html += "<p><strong>Body Part:</strong> " + exercise.bodyPart + "</p>";
-            html += "<p><strong>Equipment:</strong> " + exercise.equipment + "</p>";
-            html += "<p><strong>Target:</strong> " + exercise.target + "</p>";
-            html += "<img src='" + exercise.gifUrl + "' alt='Exercise GIF'>";
-            html += "</div>";
+        var exerciseCard = `<div class="exercise-card">
+								<div class="name"><a href= 'individual_exercise?exercise_id=${exercise_id}+'>${exercise.name}</a></div>
+								<div class="body-part"><span class="what-title"> Body-Part : &nbsp</span>${exercise.bodyPart}</div>
+								<div class="equipment"><span class="what-title">Equipment : &nbsp</span>${exercise.equipment}</div>
+								<div class="target"><span class="what-title">Target Muscle : &nbsp</span>${exercise.target}</div>
+								<img src=${exercise.gifUrl} alt="">
+								</div>` 
 
-        document.getElementById('main_div').innerHTML= html;
+
+			document.querySelector(".main-content-inner").insertAdjacentHTML('beforeend', exerciseCard)
 
     } catch (error) {
         console.error(error);
