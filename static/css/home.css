@@ -550,8 +550,9 @@ button[type="submit"] {
     border-radius: 5px;
 }
 
-textarea{
+#id_content{
     margin-left: 1rem;
+    resize: none;
     border: 1px solid pink;
     width: 95% !important;
     padding: 10px;
@@ -561,4 +562,13 @@ textarea{
     font-size: 1.2rem;
     font-family: "Lora", serif;
     background-color: var(--light);
+}
+.form-container1 form div input[type="text"]{
+    width: 95% !important;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+
+btn{
+    vertical-align: middle;
 }
