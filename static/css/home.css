@@ -569,6 +569,7 @@ button[type="submit"] {
 }
 
 
-btn{
-    vertical-align: middle;
+.form-container1 button[type="submit"]{
+    /* vertical-align: middle; */
+    line-height: 0rem !important;
 }
