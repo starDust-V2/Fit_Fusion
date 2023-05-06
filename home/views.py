@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Post
-
+from Exercise.models import UserScore
 # Create your views here.
 def landing(request):
     
@@ -20,12 +20,13 @@ def landing(request):
     return render(request,'home/landing.html',context)
 
 def home(request):
+
     user_info = {
         "image_url" : "one.png",
         "name" : "John Doe",
         "bio" : "This is the bio for me if there's any. Cause I need a one dance. Got a hennessey in my hands"
     }
-
+    top_users=UserScore.objects.order_by('-streak')[:5]
     # title author date_posted support report comment_json
     posts = [
         ["Title of the post","author1","2079 Jan 2 11:00pm", "Hello from the other side. I must have called a thousand times. To tell I'm sorry for everything that I have done. Hello from the outside. I need one dnace got a hennessey in my hands one more time for I go higher powers taking a hold on me ",1,1,{}],
@@ -39,7 +40,8 @@ def home(request):
         'link_position': 0,
         "css_url" : "css/home.css",
         "user": user_info,
-        "posts" : posts
+        "posts" : posts,
+        "top_users" : top_users,
 
     }
     return render(request,'home/home.html',context)

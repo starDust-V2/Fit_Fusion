@@ -21,6 +21,7 @@ DEBUG = True
 
 INSTALLED_APPS = [
     "daphne",
+    "sslserver",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -153,4 +154,18 @@ LOGIN_URL = 'login'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-ALLOWED_HOSTS = ["localhost","127.0.0.1",]
+ALLOWED_HOSTS = ["localhost","127.0.0.1","192.168.102.70"]
+
+if DEBUG:
+    # Development settings
+
+    # ...
+
+    # Use HTTPS on development server
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+    # SSL/TLS settings
+    SSL_CERTIFICATE = 'cert.pem'
+    SSL_KEY = 'key.pem'
