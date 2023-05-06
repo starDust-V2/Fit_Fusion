@@ -1,4 +1,6 @@
-
+.side-menu-links a span .active{
+    color: black;
+}
 .self {
     width: fit-content;
     float: right;

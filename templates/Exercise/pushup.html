@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html>
+{% extends 'Exercise/home1.html' %}
 
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./css/style.css">
-    <meta charset="utf-8">
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="./css/control_utils.css">
-    <script src="./javascript/camera_utils.js"></script>
-    <script src="./javascript/control_utils.js"></script>
-    <script src="./javascript/drawing_utils.js"></script>
-    <script src="./javascript/pose.js"></script>
-    <title>Curl Counter</title>
-</head>
-
-<body>
-    <div class="container">
+{% block main-content %}
+<div class ="loaded">
+    <div   class="container">
         <video class="input_video"></video>
         <canvas class="output_canvas" width="1280px" height="720px"></canvas>
         <!-- <canvas class="counter_canvas" width="200px" height="720px"></canvas> -->
@@ -28,19 +15,33 @@
         <a class="abs logo" href="" target="_blank">
             <div style="display: flex;align-items: center;bottom: 0;right: 10px;">
                 <img class="logo" src="logo_white.png" alt="" style="
-          height: 50px;">
-                
+        height: 50px;"><!--yeta thik cha-->
+                <span class="title"></span>
             </div>
         </a>
         <div class="shoutout">
             <div>
-                
+            
             </div>
         </div>
     </div>
     <div class="control-panel">
     </div>
-</body>
+
+
+<!-- for audio counter: -->
+<audio id="myAudio">
+
+<source src="one.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+</div>
+
+
+{% endblock main-content %}
+
+{% block scripts %}
 <script>
 // Our input frames will come from here.
 const videoElement = document.getElementsByClassName('input_video')[0];
@@ -61,30 +62,31 @@ spinner.ontransitionend = () => {
     spinner.style.display = 'none';
 };
 
-// Curl counter stuff
-let angle = 0.0;
-let stage = "DOWN";
+// Push-up counter stuff
+let nose_y = 0.5;   // nose_y = height(720) / 2
+let stage = "UP";
 let counter = 0;
 
 function zColor(data) {
     return 'white';
 }
 
-function calculate_angle(shoulder, elbow, wrist) {
-  let radians = Math.atan2(wrist[1]-elbow[1], wrist[0]-elbow[0]) - 
-    Math.atan2(shoulder[1]-elbow[1], shoulder[0]-elbow[0]);
-  let angle = Math.abs(radians * 180.0 / Math.PI);
 
-  if (angle > 180.0) {
-    angle = 360 - angle;
-  }
+function playAudio() { 
+    var x = document.getElementById("myAudio"); 
+  x.play(); 
+  console.log("here play");
+} 
 
-  return angle;
-}
+function pauseAudio() { 
+  x.pause(); 
+} 
+
+
 
 function onResults(results) {
     // Hide the spinner.
-    document.body.classList.add('loaded');
+    //document.body.classList.add('loaded');
 
     // Update the frame rate.
     fpsControl.tick();
@@ -111,27 +113,21 @@ function onResults(results) {
         canvasCtx,
         Object.values(POSE_LANDMARKS_NEUTRAL)
         .map(index => results.poseLandmarks[index]), { visibilityMin: 0.65, color: zColor, fillColor: 'white' });
-    // canvasCtx.restore();
 
-    const landmarksRight = Object.values(POSE_LANDMARKS_LEFT)
-      .map(index => results.poseLandmarks[index]);
+    const nose = Object.values(POSE_LANDMARKS_NEUTRAL)
+        .map(index => results.poseLandmarks[index]);
+    nose_y = nose[0].y;
+    //console.log(nose_y);
 
-    const shoulder = [landmarksRight[5].x, landmarksRight[5].y];
-    const elbow = [landmarksRight[6].x, landmarksRight[6].y];
-    const wrist = [landmarksRight[7].x, landmarksRight[7].y];
-
-    angle = calculate_angle(shoulder, elbow, wrist);
-    
-    // console.log(angle);
-    if (angle > 140) {
-      stage = "DOWN";
+    if (nose_y <= 0.5) {
+        stage = "UP";
     } 
-    if (angle < 30 && stage == "DOWN") {
-      stage = "UP";
-      counter += 1;
-      // console.log(stage + ", ", counter);
+    if (nose_y > 0.7 && stage == "UP") {
+        stage = "DOWN";
+        counter += 1;
+        playAudio();
     }
-    console.log("Angle: " + angle + ", Stage: " + stage + ", ", counter);
+    
 
     canvasCtx.font = "30px Arial";
     canvasCtx.fillStyle = "red";
@@ -168,10 +164,8 @@ new ControlPanel(controlsElement, {
         minTrackingConfidence: 0.2
     })
     .add([
-        new StaticText({ title: 'Curl Counter Mode' }),
-        fpsControl,
-        new Toggle({ title: 'Right Hand Practice', field: 'selfieMode' }),
-        
+        new StaticText({ title: 'Pushup Counter Mode' }),
+        fpsControl
     ])
     .on(options => {
         videoElement.classList.toggle('selfie', options.selfieMode);
@@ -179,4 +173,5 @@ new ControlPanel(controlsElement, {
     });
 </script>
 
-</html>
+{% endblock scripts %}
+

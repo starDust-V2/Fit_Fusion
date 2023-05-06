@@ -1,0 +1,180 @@
+{% extends 'Analytics/base.html' %}
+{% load static %}
+
+{% block navbar %}
+
+    <nav id = 'home-nav' class='nav'>
+        <div class="links-and-logos">
+
+            {% comment %} hamburger and logo {% endcomment %}
+            <div class="ham-logo-container">
+                <div class="ham">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+    
+                <div class="logo">
+                    <a href="/home">Fit-Fusion</a>
+                </div>     
+            </div>
+            
+            <ul class="side-menu">
+
+                <li class="slider">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </li>
+                <li class="side-menu-links">
+                    <a href="/home/">
+                        <span class="material-symbols-outlined">home</span> 
+                        <span class="link-text">Home</span>
+                    </a>
+                </li>
+                <li class="side-menu-links">
+                    <a href="/chat/">
+                        <span class="material-symbols-outlined">chat</span>
+                        <span class="link-text">Message</span>
+                    </a>
+                </li>
+                <li class="side-menu-links">
+                    <a href="/exercise/">
+                        <span class="material-symbols-outlined">exercise</span> 
+                        <span class="link-text">Excercise</span>
+                    </a>
+                </li>
+                <li class="side-menu-links">
+                    <a href="/videochat/">
+                        <span class="material-symbols-outlined">video_call</span>
+                        <span class="link-text">Video Conference</span>
+                    </a>
+                </li>
+                <li class="side-menu-links active">
+                    <a href="/analytics/">
+                        <span class="material-symbols-outlined">insights</span>
+                        <span class="link-text">Analytics</span>
+                    </a>
+                </li>
+                <li class="side-menu-links dead">
+                    <a href="#">
+                        <span class="material-symbols-outlined">loyalty</span>
+                        <span class="link-text">Subscription</span>
+                    </a>
+                </li>
+                <li class="side-menu-links dead">
+                    <a href="#">
+                        <span class="material-symbols-outlined">book</span>
+                        <span class="link-text">Book Session</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        {% comment %} user-icon to the right {% endcomment %}
+        <div class="user-icon">
+            <div class="about-me">
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <img src="{{MEDIA_URL}}/one.png" alt="profile-pic">
+            {% comment %} <div class="logout-form-container">
+                <button>Log Out</button>
+            </div> {% endcomment %}
+        </div>
+    </nav>
+
+{% endblock navbar %}
+
+
+
+
+{% block hero %}
+
+    {% comment %} <ul class="side-menu">
+        <li class="side-menu-links"><a  class= "active" href="/home/">Home</a></li>
+        <li class="side-menu-links"><a href="/home/physical">Physical</a></li>
+        <li class="side-menu-links"><a href="/home/mental">Mental </a></li>
+        <li class="side-menu-links"><a href="/home/overview">Overview</a></li>
+    </ul> {% endcomment %}
+
+    <div class="main-content">
+        <div class="main-content-inner">
+            {% block main-content %}
+                <div class="content-separator">
+
+                    <div class="left-analytics">
+
+                        <div class="user-greet">
+                            <div class="greet">
+                                Hello John ! <br/>
+                                I hope you're ready to build yourself up !!
+                            </div>
+                            <img src= alt="">
+                        </div>
+
+                        <div class="user-status">
+                            <div class="status-content status-content1">
+                                <div class="content-name">
+                                    <span class="title">Calorie Burn</span>
+                                    <span class="title">+ 15%</span>
+                                </div>
+                                <div class="content-amount">120 Kcal</div>
+                            </div>
+                            <div class="status-content status-content2">
+                                <div class="content-name">
+                                    <span class="title">Fitness score</span>
+                                    <span class="title">+ 0.25</span>
+                                </div>
+                                <div class="content-amount">6.5 / 10</div>
+                            </div>
+                            <div class="status-content status-content3">
+                                <div class="content-name">
+                                    <span class="title">Coins</span>
+                                    <span class="title">+ 15</span>
+                                </div>
+                                <div class="content-amount">140</div>
+                            </div>
+                        </div>
+
+                        <div class="graphs">
+                            <div class="calorie-burn-graph">
+                                <span>Last Weeks Activity</span>
+                                <img src={% static "images/graph.jpg" %} alt="You Know nothing">
+                            </div>
+                            <div class="workout-activity">
+                                <span>Calorie Burn Graph</span>
+                                <img src={% static "images/cal-burn.jpg" %} alt="This contains the activity">
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="right-exercises">
+                        <div class="exercise-container">
+                            <div class="exercise">
+                                <div class="exercise-name1">Push Up</div>
+                                <div class="exercise-timing">6:00 AM - 6:15 AM</div>
+                            </div>
+                            <div class="exercise">
+                                <div class="exercise-name2">Squats</div>
+                                <div class="exercise-timing">6:15 AM - 6:30 AM</div>
+                            </div>
+                            <div class="exercise">
+                                <div class="exercise-name3">Curls</div>
+                                <div class="exercise-timing">6:30 AM - 6:45 AM</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            {% endblock main-content %}
+        </div>
+        
+    </div>
+
+    
+{% endblock hero %}

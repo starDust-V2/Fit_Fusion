@@ -3,6 +3,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("users/",include("Users.urls")),
@@ -11,6 +12,7 @@ urlpatterns = [
 
     path("exercise/", include('Exercise.urls')),
     path("videochat/",include('VideoChat.urls')),
+    path('analytics/',include('Analytics.urls'))
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

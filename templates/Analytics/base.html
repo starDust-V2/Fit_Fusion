@@ -12,26 +12,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
     {% comment %} using context to pass the css_url {% endcomment %}
     
-    {% comment %} <link rel="stylesheet" href= "{% static css_url %}"> {% endcomment %}
+    <link rel="stylesheet" href= "{% static css_url %}">
+
+    {% block stylesheet %}{% endblock stylesheet %}
+
+
     <link rel="stylesheet" href= {% static "css/home.css" %}>
-    <link rel="stylesheet" href= {% static "css/exercise.css" %}>
+    <link rel="stylesheet" href= {% static "css/analytics.css" %}>
+
+    <title>Fit-Fusion</title>
     
     <script defer src={% static "js/base.js"%} defer></script>
-    
-    <link rel="stylesheet" href={% static "css/style.css" %}>
-    <link rel="stylesheet" href={% static "css/control_utils.css" %}>
-    <script src={% static "js/camera_utils.js" %}></script>
-    <script src={% static "js/control_utils.js" %}></script>
-    <script src={% static "js/drawing_utils.js" %}></script>
-    <script src={% static "js/pose.js" %}></script>
-    <title>Fit-Fusion</title>
     <script>
-        var activeLinkPos = 2;
+        const activeLinkPos = 4;
     </script>
-
-    
 </head>
-<span class="what-title"></span>
+
 <body>
     {% block navbar %}
     <nav>
@@ -68,11 +64,9 @@
         <div class="overlay"></div>
         {% block hero %}{% endblock hero %}
     </div>
-    {% block scripts %} {% endblock scripts %}
     
     <footer>
         &copy;&nbsp; StarDust 2023, All Rights Reserved.
     </footer>
 </body>
 </html>
-

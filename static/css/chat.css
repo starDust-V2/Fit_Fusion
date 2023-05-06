@@ -1,1 +1,33 @@
 @import url("home.css");
+.side-menu-links a span .active{
+    color: black;
+}
+input#room-name-input{
+    z-index: 5 !important;
+    font-family: 'Alumni Sans', sans-serif;
+    width: 15rem;
+    height: 2rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    font-size: var(--prominent-size);
+    line-height: 2rem;
+    box-shadow: 0 0 4px;
+    transition: 0.4s;
+}
+
+input#room-name-submit{
+    display: inline-block;
+    font-family: "Lora", serif;
+    width: 12rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    font-size: var(--prominent-size);
+    line-height: 2rem;
+    transition: 0.4s;
+    background-color: var(--thirty);
+    color: white;
+    margin-top: 1rem;
+}

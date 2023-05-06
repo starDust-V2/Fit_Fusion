@@ -1,0 +1,177 @@
+.side-menu-links a span .active{
+    color: black;
+}
+.main-content-inner{
+    width: 75%;
+    margin-left: 25%;
+
+}
+@media screen and (max-width: 1392px){
+    .main-content {
+        margin-left: calc(22rem);
+        width: 80%;
+    }
+}
+.content-separator{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.left-analytics{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.right-exercises{
+    width: 23%;
+    border-radius: 0.5rem;
+}
+.exercise{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 4rem;
+}
+
+.exercise .exercise-name1,
+.exercise .exercise-name2,
+.exercise .exercise-name3{
+    font-size: var(--normal-text);
+    width: 40%;
+    line-height: 3rem;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+.exercise .exercise-timing{
+    width: 60%;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    padding-left: 0.5rem;
+}
+.exercise .exercise-name1{
+    width: 100%;
+    height:3rem;
+    background-color: #d5d5d5;
+}
+.exercise .exercise-name2{
+    color: white;
+    width: 100%;
+    height:3rem;
+    background-color: var(--purple);
+}
+.exercise .exercise-name3{
+    width: 100%;
+    height:3rem;
+    background-color: var(--yellow);
+}
+
+.status-content1{
+    background-color: var(--yellow);
+}
+.status-content2{
+    background-color: var(--blue);
+    color: white;
+}
+.status-content3{
+    background-color: var(--thirty);
+    color: white;
+}
+.user-greet{
+    width: 100%;
+    height: 6rem;
+    font-size: var(--prominent-size);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: rgba(0,0,0,0); */
+}
+.user-greet .greet{
+    width: 50%;
+    padding: 1rem;
+}
+.user-greet img{
+    width: 30%;
+    transform: translateY(-25%);
+    border-radius: 0.5rem;
+    box-shadow: 1 0 0 4px rgba(0,0,0,0.2);
+
+}
+
+.user-status{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.user-status .status-content{
+    width: 30%;
+    height: 5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-content .content-name{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: var(--normal-text);
+}
+.content-amount{
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+    padding-left: 1rem;
+    font-size: var(--prominent-size);
+}
+
+.graphs{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.calorie-burn-graph,.workout-activity{
+    padding: 0.5rem;
+    background-color: white;
+    width: 45%;
+    display: flex;
+    gap:0.4rem;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+.graphs div span{
+    font-size: var(--normal-text);
+}
+.calorie-burn-graph img,.workout-activity img{
+    width: 20rem;
+}
+.workout-activity img{
+    height: 11rem;
+}
+
+.graphs div{
+    height: 15rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+
