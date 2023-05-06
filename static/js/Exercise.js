@@ -74,7 +74,9 @@ async function api_call_individual()
 								</div>` 
 
 
-			document.querySelector(".main-content-inner").insertAdjacentHTML('beforeend', exerciseCard)
+			document.querySelector(".main-content-inner").insertAdjacentHTML('beforeend', exerciseCard);
+
+			
 
     } catch (error) {
         console.error(error);
