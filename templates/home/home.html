@@ -116,25 +116,27 @@
             
             {% endfor %}
 
+            <div class="user-and-bio">
+                <div class="user-info">
+                    <div class="cover-pic">
+                        <img src="{{MEDIA_URL}}/{{user.image_url}}" alt="">
+                    </div>
+                    <div class="user-icon">
+                        <img src="{{MEDIA_URL}}/{{user.image_url}}" alt="profile-pic">
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">{{user.name}}</p>
+                        <p class="bio">{{user.bio}}</p>
+                    </div>
+                    
+                </div>
+            </div>
+
             {% endblock main-content %}
 
             {% comment %} side ko user info wala card {% endcomment %}  
         </div>
-        <div class="user-and-bio">
-            <div class="user-info">
-                <div class="cover-pic">
-                    <img src="{{MEDIA_URL}}/{{user.image_url}}" alt="">
-                </div>
-                <div class="user-icon">
-                    <img src="{{MEDIA_URL}}/{{user.image_url}}" alt="profile-pic">
-                </div>
-                <div class="user-details">
-                    <p class="user-name">{{user.name}}</p>
-                    <p class="bio">{{user.bio}}</p>
-                </div>
-                
-            </div>
-        </div>
+        
     </div>
 
     
